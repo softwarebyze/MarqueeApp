@@ -3,7 +3,6 @@
 Enter text, rotate your screen, and see a few letters at a time scroll horizontally across the screen
 
 [Figma](https://www.figma.com/file/506xtwNVhCEPM5IgKG7SZU/MarqueeApp?type=design&node-id=0%3A1&mode=design&t=rcbsvrYvxYGzawNA-1)
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F506xtwNVhCEPM5IgKG7SZU%2FMarqueeApp%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3DrcbsvrYvxYGzawNA-1" allowfullscreen></iframe>
 
 ## How it was Created (Ignited)
 The React Native/Expo boilerplate that I wanted to try out is called Ignite. Ignite's [docs](https://github.com/infinitered/ignite/blob/8ba15031cb50677d7d8fe30d2eec2d24b7269bd4/docs/Guide.md#ignite-cli) suggest to create the app by running 
