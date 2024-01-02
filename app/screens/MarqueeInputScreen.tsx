@@ -2,6 +2,7 @@ import React from "react"
 import { Screen, TextField, Button, Text } from "app/components"
 import { spacing } from "app/theme"
 import { TextStyle, ViewStyle } from "react-native"
+import { Marquee } from "@animatereactnative/marquee"
 
 export const MarqueeInputScreen = () => {
   const [show, toggleShow] = React.useReducer((show) => !show, false)
@@ -19,7 +20,11 @@ export const MarqueeInputScreen = () => {
         onChangeText={setText}
       />
       <Button text="Show Marquee!" onPress={toggleShow} />
-      {show && <Text onPress={toggleShow} text={text} />}
+      {show && (
+        <Marquee spacing={20}>
+          <Text onPress={toggleShow} text={text} />
+        </Marquee>
+      )}
     </Screen>
   )
 }
