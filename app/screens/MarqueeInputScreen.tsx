@@ -1,32 +1,34 @@
 import React from "react"
-import { Screen, TextField, Button } from "app/components"
+import { Screen, TextField, Button, Text } from "app/components"
+import { spacing } from "app/theme"
+import { TextStyle, ViewStyle } from "react-native"
 
 export const MarqueeInputScreen = () => {
-  function showMarquee() {
-    console.log("showMarquee")
-  }
+  const [show, toggleShow] = React.useReducer((show) => !show, false)
+  const [text, setText] = React.useState("")
+
   return (
-    <Screen safeAreaEdges={["top"]}>
+    <Screen contentContainerStyle={$container} safeAreaEdges={["top"]}>
+      <Text preset="heading" tx="marqueeScreen.title" style={$title} />
       <TextField
-        label="Enter text:"
-        // helper="This will be the marquee text"
         multiline
-        //   style={styles.marqueeInput}
+        labelTx="marqueeScreen.label"
         placeholder="Type here"
         placeholderTextColor="#aaa"
         selectionColor="#fff"
-        caretHidden={false}
-        //   caretColor="#fff"
-        // autoCapitalize="none"
-        // autoCorrect={false}
-        // scrollEnabled={true}
-        // returnKeyType="done"
-        // returnKeyLabel="done"
-        // keyboardAppearance="dark"
-        // blurOnSubmit={true}
-        onChangeText={(text) => console.log(text)}
+        onChangeText={setText}
       />
-      <Button text="Show Marquee!" onPress={showMarquee} />
+      <Button text="Show Marquee!" onPress={toggleShow} />
+      {show && <Text onPress={toggleShow} text={text} />}
     </Screen>
   )
+}
+
+const $container: ViewStyle = {
+  paddingTop: spacing.lg + spacing.xl,
+  paddingHorizontal: spacing.lg,
+}
+
+const $title: TextStyle = {
+  marginBottom: spacing.sm,
 }

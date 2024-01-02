@@ -42,7 +42,8 @@ const en = {
     hint: "Hint: you can use any email address and your favorite password :)",
   },
   marqueeScreen: {
-    title: "Enter text",
+    title: "Marquee",
+    label: "Enter text",
   },
   demoNavigator: {
     marqueeTab: "Marquee",
