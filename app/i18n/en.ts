@@ -41,7 +41,11 @@ const en = {
     tapToSignIn: "Tap to sign in!",
     hint: "Hint: you can use any email address and your favorite password :)",
   },
+  marqueeScreen: {
+    title: "Enter text",
+  },
   demoNavigator: {
+    marqueeTab: "Marquee",
     componentsTab: "Components",
     debugTab: "Debug",
     communityTab: "Community",

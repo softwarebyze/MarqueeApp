@@ -15,5 +15,5 @@ appId: com.marqueeapp # the app id of the app we want to test
 - assertVisible: "Your app, almost ready for launch!"
 - tapOn:
     text: "Let's go!"
-- assertVisible: "Components to jump start your project!"
+- assertVisible: "Enter text:"
 
