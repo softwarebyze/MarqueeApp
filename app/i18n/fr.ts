@@ -33,17 +33,6 @@ const fr: Translations = {
   errors: {
     invalidEmail: "Adresse e-mail invalide.",
   },
-  loginScreen: {
-    signIn: "Se connecter",
-    enterDetails:
-      "Entrez vos informations ci-dessous pour débloquer des informations top secrètes. Vous ne devinerez jamais ce que nous avons en attente. Ou peut-être que vous le ferez ; ce n'est pas de la science spatiale ici.",
-    emailFieldLabel: "E-mail",
-    passwordFieldLabel: "Mot de passe",
-    emailFieldPlaceholder: "Entrez votre adresse e-mail",
-    passwordFieldPlaceholder: "Mot de passe super secret ici",
-    tapToSignIn: "Appuyez pour vous connecter !",
-    hint: "Astuce : vous pouvez utiliser n'importe quelle adresse e-mail et votre mot de passe préféré :)",
-  },
   demoNavigator: {
     componentsTab: "Composants",
     debugTab: "Débogage",
