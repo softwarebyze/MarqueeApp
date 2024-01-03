@@ -32,17 +32,6 @@ const ar: Translations = {
   errors: {
     invalidEmail: "عنوان البريد الالكتروني غير صالح",
   },
-  loginScreen: {
-    signIn: "تسجيل الدخول",
-    enterDetails:
-      ".ادخل التفاصيل الخاصة بك ادناه لفتح معلومات سرية للغاية. لن تخمن ابداً ما الذي ننتظره. او ربما ستفعل انها انها ليست علم الصواريخ",
-    emailFieldLabel: "البريد الالكتروني",
-    passwordFieldLabel: "كلمة السر",
-    emailFieldPlaceholder: "ادخل بريدك الالكتروني",
-    passwordFieldPlaceholder: "كلمة السر هنا فائقة السر",
-    tapToSignIn: "انقر لتسجيل الدخول!",
-    hint: "(: تلميح: يمكنك استخدام اي عنوان بريد الكتروني وكلمة السر المفضلة لديك",
-  },
   demoNavigator: {
     componentsTab: "عناصر",
     debugTab: "تصحيح",
