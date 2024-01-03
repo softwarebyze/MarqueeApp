@@ -30,7 +30,7 @@ export const MarqueeText = ({
   const $marqueeText: TextStyle = {
     fontSize: marqueeTextSize,
     height: marqueeTextSize - 0,
-    lineHeight: marqueeTextSize,
+    lineHeight: marqueeTextSize * 1.2,
     letterSpacing: -marqueeTextSize * 0.05,
   }
 
@@ -51,7 +51,9 @@ const $fullScreen: ViewStyle = {
   position: "absolute",
   top: 0,
   bottom: 0,
-  alignItems: "center",
+  left: 0,
+  right: 0,
+  alignItems: "flex-start",
   justifyContent: "center",
   backgroundColor: colors.background,
 }
