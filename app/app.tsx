@@ -37,8 +37,8 @@ export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 // Web linking configuration
 const prefix = Linking.createURL("/")
 
-const decode = (encodedText: string) => decodeURIComponent(encodedText.replace(/\+/g, " "))
-const encode = (encodedText: string) => encodeURIComponent(encodedText.replace(/\+/g, " "))
+const decode = (encodedText: string) => decodeURIComponent(encodedText)
+const encode = (text: string) => encodeURIComponent(text)
 
 // passing params: https://reactnavigation.org/docs/configuring-links/#passing-params
 // parse is to encode
