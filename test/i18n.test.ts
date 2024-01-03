@@ -4,7 +4,7 @@ import { exec } from "child_process"
 // Use this array for keys that for whatever reason aren't greppable so they
 // don't hold your test suite hostage by always failing.
 const EXCEPTIONS: string[] = [
-  // "welcomeScreen.readyForLaunch",
+  // "welcomeScreen.createMarquee",
 ]
 
 function iterate(obj, stack, array) {

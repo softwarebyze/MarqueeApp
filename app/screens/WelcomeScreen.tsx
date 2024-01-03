@@ -28,7 +28,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         <Text
           testID="welcome-heading"
           style={$welcomeHeading}
-          tx="welcomeScreen.readyForLaunch"
+          tx="welcomeScreen.createMarquee"
           preset="heading"
         />
         <Text tx="welcomeScreen.exciting" preset="subheading" />

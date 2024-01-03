@@ -10,7 +10,7 @@ const ar: Translations = {
   welcomeScreen: {
     postscript:
       "ربما لا يكون هذا هو الشكل الذي يبدو عليه تطبيقك مالم يمنحك المصمم هذه الشاشات وشحنها في هذه الحالة",
-    readyForLaunch: "تطبيقك تقريبا جاهز للتشغيل",
+    createMarquee: "أنشئ لوحة إعلاناتك الخاصة!",
     exciting: "اوه هذا مثير",
     letsGo: "لنذهب",
   },
