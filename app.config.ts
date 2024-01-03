@@ -8,7 +8,7 @@ require("ts-node/register")
 
 /**
  * @param config ExpoConfig coming from the static config app.json if it exists
- * 
+ *
  * You can read more about Expo's Configuration Resolution Rules here:
  * https://docs.expo.dev/workflow/configuration/#configuration-resolution-rules
  */
@@ -17,9 +17,12 @@ module.exports = ({ config }: ConfigContext): Partial<ExpoConfig> => {
 
   return {
     ...config,
-    plugins: [
-      ...existingPlugins,
-      require("./plugins/withSplashScreen").withSplashScreen,
-    ],
+    updates: {
+      url: "https://u.expo.dev/a95f3991-16ef-4f1c-88ab-82319447ad3e",
+    },
+    runtimeVersion: {
+      policy: "appVersion",
+    },
+    plugins: [...existingPlugins, require("./plugins/withSplashScreen").withSplashScreen],
   }
 }
