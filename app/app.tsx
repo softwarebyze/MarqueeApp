@@ -36,6 +36,7 @@ export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 
 // Web linking configuration
 const prefix = Linking.createURL("/")
+const viewLink = Linking.createURL("/view/:text", { queryParams: {text: ""} })
 
 const decode = (encodedText: string) => decodeURIComponent(encodedText)
 const encode = (text: string) => encodeURIComponent(text)
@@ -107,7 +108,7 @@ function App(props: AppProps) {
   if (!rehydrated || !isNavigationStateRestored || !areFontsLoaded) return null
 
   const linking: LinkingOptions<object> | undefined = {
-    prefixes: [prefix],
+    prefixes: [prefix, viewLink],
     config,
   }
 
