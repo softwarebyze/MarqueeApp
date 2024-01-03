@@ -7,7 +7,7 @@ const fr: Translations = {
     back: "Retour",
     logOut: "Déconnexion",
   },
-  welcomeScreen: {
+  homeScreen: {
     postscript:
       "psst  — Ce n'est probablement pas à quoi ressemble votre application. (À moins que votre designer ne vous ait donné ces écrans, dans ce cas, mettez la en prod !)",
     createMarquee: "Créez votre propre marquee !",

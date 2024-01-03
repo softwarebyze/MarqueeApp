@@ -30,14 +30,34 @@ import { customFontsToLoad } from "./theme"
 import Config from "./config"
 import { GestureHandlerRootView } from "react-native-gesture-handler"
 import { ViewStyle } from "react-native"
+import { LinkingOptions } from "@react-navigation/native"
 
 export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 
 // Web linking configuration
 const prefix = Linking.createURL("/")
+
+const decode = (encodedText: string) => decodeURIComponent(encodedText.replace(/\+/g, " "))
+const encode = (encodedText: string) => encodeURIComponent(encodedText.replace(/\+/g, " "))
+
+// passing params: https://reactnavigation.org/docs/configuring-links/#passing-params
+// parse is to encode
+const parse = { text: (text: string) => decode(text) }
+// stringify is to decode
+const stringify = { text: (text: string) => encode(text) }
+
 const config = {
   screens: {
-    Welcome: "welcome",
+    Home: {
+      path: "/",
+      parse,
+      stringify,
+    },
+    View: {
+      path: "view/:text",
+      parse,
+      stringify,
+    },
     // Demo: {
     //   screens: {
     //     DemoShowroom: {
@@ -86,7 +106,7 @@ function App(props: AppProps) {
   // You can replace with your own loading component if you wish.
   if (!rehydrated || !isNavigationStateRestored || !areFontsLoaded) return null
 
-  const linking = {
+  const linking: LinkingOptions<object> | undefined = {
     prefixes: [prefix],
     config,
   }

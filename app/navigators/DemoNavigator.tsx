@@ -9,7 +9,6 @@ import {
   DemoCommunityScreen,
   DemoShowroomScreen,
   DemoDebugScreen,
-  MarqueeInputScreen,
 } from "../screens"
 import { DemoPodcastListScreen } from "../screens/DemoPodcastListScreen"
 import { colors, spacing, typography } from "../theme"
@@ -20,7 +19,6 @@ export type DemoTabParamList = {
   DemoShowroom: { queryIndex?: string; itemIndex?: string }
   DemoDebug: undefined
   DemoPodcastList: undefined
-  MarqueeInputScreen: undefined
 }
 
 /**
@@ -50,17 +48,6 @@ export function DemoNavigator() {
         tabBarItemStyle: $tabBarItem,
       }}
     >
-      <Tab.Screen
-        name="MarqueeInputScreen"
-        component={MarqueeInputScreen}
-        options={{
-          tabBarLabel: translate("demoNavigator.marqueeTab"),
-          tabBarIcon: ({ focused }) => (
-            <Icon icon="marquee" color={focused ? colors.tint : undefined} size={30} />
-          ),
-        }}
-      />
-
       <Tab.Screen
         name="DemoShowroom"
         component={DemoShowroomScreen}
