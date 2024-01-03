@@ -25,7 +25,7 @@
     "android": "npx expo start --android",
     "ios": "npx expo start --ios",
     "web": "npx expo start --web",
-    "build:web": "expo export:web && cp _redirects web-build",
+    "build:web": "expo export --platform web && cp _redirects dist",
     "bundle:web": "npx expo export --platform web",
     "serve:web": "npx server dist",
     "prebuild:clean": "npx expo prebuild --clean",
