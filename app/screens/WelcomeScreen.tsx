@@ -120,13 +120,13 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
             value={text}
           />
           <View style={$previewContainer}>
-            <Text text="Preview" />
+            <Text style={$previewText} text="Preview" />
             <PreviewMarquee />
           </View>
           <Button
             style={$button}
             preset="reversed"
-            text={`${show ? "Hide" : "Show"} Marquee!`}
+            text={`${show ? "Hide" : "Show"} Full Screen!`}
             onPress={toggleShow}
           />
           <ReportBugs />
@@ -154,6 +154,12 @@ const $topContainer: ViewStyle = {
 const $previewContainer: ViewStyle = {
   paddingHorizontal: spacing.lg,
   marginVertical: spacing.xl,
+}
+
+const $previewText: TextStyle = {
+  fontSize: 20,
+  fontWeight: "bold",
+  marginBottom: spacing.md,
 }
 
 const $welcomeLogo: ImageStyle = {
