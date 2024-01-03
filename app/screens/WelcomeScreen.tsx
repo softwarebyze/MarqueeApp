@@ -1,50 +1,98 @@
 import { observer } from "mobx-react-lite"
 import React, { FC } from "react"
-import { Image, ImageStyle, TextStyle, View, ViewStyle } from "react-native"
-import { Button, Text } from "app/components"
-import { isRTL } from "../i18n"
+import { Image, ImageStyle, TextStyle, View, ViewStyle, useWindowDimensions } from "react-native"
+import { TextField, Button, Text } from "app/components"
 import { AppStackScreenProps } from "../navigators"
 import { colors, spacing } from "../theme"
-import { useSafeAreaInsetsStyle } from "../utils/useSafeAreaInsetsStyle"
+import { Marquee } from "@animatereactnative/marquee"
 
 const welcomeLogo = require("../../assets/images/logo.png")
-const welcomeFace = require("../../assets/images/welcome-face.png")
 
 interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> {}
 
-export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeScreen(_props) {
-  const { navigation } = _props
+interface MarqueeTextProps {
+  onPress?: () => void
+  text: string
+  speed?: number
+  spacing?: number
+  fullscreen: boolean
+  size?: number
+}
 
-  function goNext() {
-    navigation.navigate("Demo", { screen: "MarqueeInputScreen" })
+const MarqueeText = ({ onPress, text, speed, spacing, fullscreen, size }: MarqueeTextProps) => {
+  const { height: screenHeight } = useWindowDimensions()
+
+  const marqueeTextSize = size || screenHeight / 2
+
+  const $marqueeText: TextStyle = {
+    fontSize: marqueeTextSize,
+    height: marqueeTextSize - 0,
+    lineHeight: marqueeTextSize,
+    letterSpacing: -marqueeTextSize * 0.05,
+  }
+  const $fullScreen: ViewStyle = {
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.background,
   }
 
-  const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"])
+  const formattedText = text.toUpperCase()
+
+  return (
+    <Marquee style={fullscreen ? $fullScreen : {}} spacing={spacing} speed={speed}>
+      <Text style={$marqueeText} text={formattedText} onPress={onPress} />
+    </Marquee>
+  )
+}
+
+export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeScreen(_props) {
+  // const { navigation } = _props
+  // function goNext() {
+  //   navigation.navigate("Demo", { screen: "MarqueeInputScreen" })
+  // }
+
+  const [text, setText] = React.useState("Your Name")
+  const [show, toggleShow] = React.useReducer((show) => !show, false)
+
+  const CustomMarquee = (props: Partial<MarqueeTextProps>) => (
+    <MarqueeText fullscreen={false} spacing={70} text={text} speed={1} {...props} />
+  )
+
+  const PreviewMarquee = () => <CustomMarquee size={40} />
+  const FullScreenMarquee = () => <CustomMarquee onPress={toggleShow} fullscreen />
 
   return (
     <View style={$container}>
-      <View style={$topContainer}>
-        <Image style={$welcomeLogo} source={welcomeLogo} resizeMode="contain" />
-        <Text
-          testID="welcome-heading"
-          style={$welcomeHeading}
-          tx="welcomeScreen.createMarquee"
-          preset="heading"
-        />
-        <Text tx="welcomeScreen.exciting" preset="subheading" />
-        <Image style={$welcomeFace} source={welcomeFace} resizeMode="contain" />
-      </View>
-
-      <View style={[$bottomContainer, $bottomContainerInsets]}>
-        <Text tx="welcomeScreen.postscript" size="md" />
-
-        <Button
-          testID="next-screen-button"
-          preset="reversed"
-          tx="welcomeScreen.letsGo"
-          onPress={goNext}
-        />
-      </View>
+      {!show ? (
+        <View style={$topContainer}>
+          <Image style={$welcomeLogo} source={welcomeLogo} resizeMode="contain" />
+          <Text style={$welcomeHeading} tx="welcomeScreen.createMarquee" preset="heading" />
+          <TextField
+            multiline
+            labelTx="marqueeScreen.label"
+            placeholder="Type here"
+            placeholderTextColor="#aaa"
+            selectionColor="#fff"
+            onChangeText={setText}
+            value={text}
+          />
+          <View style={$previewContainer}>
+            <Text text="Preview" />
+            <PreviewMarquee />
+          </View>
+          <Button
+            style={$button}
+            preset="reversed"
+            text={`${show ? "Hide" : "Show"} Marquee!`}
+            onPress={toggleShow}
+          />
+        </View>
+      ) : (
+        <FullScreenMarquee />
+      )}
     </View>
   )
 })
@@ -62,31 +110,22 @@ const $topContainer: ViewStyle = {
   paddingHorizontal: spacing.lg,
 }
 
-const $bottomContainer: ViewStyle = {
-  flexShrink: 1,
-  flexGrow: 0,
-  flexBasis: "43%",
-  backgroundColor: colors.palette.neutral100,
-  borderTopLeftRadius: 16,
-  borderTopRightRadius: 16,
+const $previewContainer: ViewStyle = {
   paddingHorizontal: spacing.lg,
-  justifyContent: "space-around",
+  marginVertical: spacing.xl,
 }
+
 const $welcomeLogo: ImageStyle = {
   height: 88,
   width: "100%",
   marginBottom: spacing.xxl,
 }
 
-const $welcomeFace: ImageStyle = {
-  height: 169,
-  width: 269,
-  position: "absolute",
-  bottom: -47,
-  right: -80,
-  transform: [{ scaleX: isRTL ? -1 : 1 }],
+const $welcomeHeading: TextStyle = {
+  marginBottom: spacing.md,
 }
 
-const $welcomeHeading: TextStyle = {
+const $button: ViewStyle = {
+  marginTop: spacing.md,
   marginBottom: spacing.md,
 }
