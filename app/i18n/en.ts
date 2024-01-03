@@ -7,8 +7,8 @@ const en = {
   },
   welcomeScreen: {
     postscript:
-      "psst  — This probably isn't what your app looks like. (Unless your designer handed you these screens, and in that case, ship it!)",
-    readyForLaunch: "Your app, almost ready for launch!",
+      "Enjoy your marquee :)",
+    createMarquee: "Create your own marquee!",
     exciting: "(ohh, this is exciting!)",
     letsGo: "Let's go!",
   },
@@ -30,7 +30,12 @@ const en = {
   errors: {
     invalidEmail: "Invalid email address.",
   },
+  marqueeScreen: {
+    title: "Marquee",
+    label: "Enter text",
+  },
   demoNavigator: {
+    marqueeTab: "Marquee",
     componentsTab: "Components",
     debugTab: "Debug",
     communityTab: "Community",
