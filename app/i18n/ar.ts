@@ -7,7 +7,7 @@ const ar: Translations = {
     back: "خلف",
     logOut: "تسجيل خروج",
   },
-  welcomeScreen: {
+  homeScreen: {
     postscript:
       "ربما لا يكون هذا هو الشكل الذي يبدو عليه تطبيقك مالم يمنحك المصمم هذه الشاشات وشحنها في هذه الحالة",
     createMarquee: "أنشئ لوحة إعلاناتك الخاصة!",

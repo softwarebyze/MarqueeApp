@@ -5,7 +5,7 @@ const en = {
     back: "Back",
     logOut: "Log Out",
   },
-  welcomeScreen: {
+  homeScreen: {
     postscript:
       "Enjoy your marquee :)",
     createMarquee: "Create your own marquee!",
