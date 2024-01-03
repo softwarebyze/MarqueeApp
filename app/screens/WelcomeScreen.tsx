@@ -1,10 +1,50 @@
 import { observer } from "mobx-react-lite"
 import React, { FC } from "react"
-import { Image, ImageStyle, TextStyle, View, ViewStyle, useWindowDimensions } from "react-native"
+import {
+  Image,
+  ImageStyle,
+  Linking,
+  TextStyle,
+  View,
+  ViewStyle,
+  useWindowDimensions,
+} from "react-native"
 import { TextField, Button, Text } from "app/components"
 import { AppStackScreenProps } from "../navigators"
 import { colors, spacing } from "../theme"
 import { Marquee } from "@animatereactnative/marquee"
+import { isRTL } from "../i18n"
+
+const issuesUrl = "https://github.com/softwarebyze/MarqueeApp/issues"
+
+// <TouchableOpacity >
+//   <Image style={$githubLogo} source={githubLogo} resizeMode="contain" />
+// </TouchableOpacity>
+// const $githubLogo: ImageStyle = {
+//   height: 40,
+//   // alignSelf: 'center',
+//   marginTop: spacing.xl,
+// }
+
+function openLinkInBrowser(url: string) {
+  Linking.canOpenURL(url).then((canOpen) => canOpen && Linking.openURL(url))
+}
+
+const ReportBugs = () => (
+  <Text
+    style={$reportBugsLink}
+    tx="demoDebugScreen.reportBugs"
+    onPress={() => openLinkInBrowser(issuesUrl)}
+    
+  />
+)
+
+const $reportBugsLink: TextStyle = {
+  color: colors.tint,
+  marginBottom: spacing.lg,
+  alignSelf: isRTL ? "flex-start" : "flex-end",
+}
+
 
 const welcomeLogo = require("../../assets/images/logo.png")
 
@@ -54,7 +94,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
   //   navigation.navigate("Demo", { screen: "MarqueeInputScreen" })
   // }
 
-  const [text, setText] = React.useState("to the mooooooooonnn 🚀🚀🚀🚀")
+  const [text, setText] = React.useState(() => "to the mooooooooonnn 🚀🚀🚀🚀")
   const [show, toggleShow] = React.useReducer((show) => !show, false)
 
   const CustomMarquee = (props: Partial<MarqueeTextProps>) => (
@@ -89,6 +129,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
             text={`${show ? "Hide" : "Show"} Marquee!`}
             onPress={toggleShow}
           />
+          <ReportBugs />
         </View>
       ) : (
         <FullScreenMarquee />
