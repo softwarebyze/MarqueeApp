@@ -54,7 +54,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
   //   navigation.navigate("Demo", { screen: "MarqueeInputScreen" })
   // }
 
-  const [text, setText] = React.useState("Your Name")
+  const [text, setText] = React.useState("to the mooooooooonnn 🚀🚀🚀🚀")
   const [show, toggleShow] = React.useReducer((show) => !show, false)
 
   const CustomMarquee = (props: Partial<MarqueeTextProps>) => (
