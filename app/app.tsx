@@ -38,16 +38,16 @@ const prefix = Linking.createURL("/")
 const config = {
   screens: {
     Welcome: "welcome",
-    Demo: {
-      screens: {
-        DemoShowroom: {
-          path: "showroom/:queryIndex?/:itemIndex?",
-        },
-        DemoDebug: "debug",
-        DemoPodcastList: "podcast",
-        DemoCommunity: "community",
-      },
-    },
+    // Demo: {
+    //   screens: {
+    //     DemoShowroom: {
+    //       path: "showroom/:queryIndex?/:itemIndex?",
+    //     },
+    //     DemoDebug: "debug",
+    //     DemoPodcastList: "podcast",
+    //     DemoCommunity: "community",
+    //   },
+    // },
   },
 }
 
