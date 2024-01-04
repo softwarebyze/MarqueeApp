@@ -39,12 +39,9 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
   const [text, setText] = React.useState(
     () => textFromRoute || texts[Math.floor(Math.random() * texts.length)],
   )
-  const [show, toggleShow] = React.useReducer((show) => !show, false)
   const previewSize = 40
   const marqueeProps = {
     text,
-    onPress: toggleShow,
-    fullscreen: show,
     speed: 1,
     spacing: 70,
   }
@@ -69,14 +66,9 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
         />
         <View style={$previewContainer}>
           <Text style={$previewText} text="Preview" />
-          <MarqueeText size={previewSize} {...marqueeProps} />
+          <MarqueeText fullscreen={false} size={previewSize} {...marqueeProps} />
         </View>
-        <Button
-          style={$button}
-          preset="reversed"
-          text={`${show ? "Hide" : "Show"} Full Screen!`}
-          onPress={showMarquee}
-        />
+        <Button style={$button} preset="reversed" text="Show Full Screen!" onPress={showMarquee} />
         <ReportBugs />
       </View>
     </View>
