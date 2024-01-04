@@ -43,6 +43,7 @@
       "channel": "preview_device"
     },
     "production": {
+      "autoIncrement": true,
       "channel": "production"
     }
   },
