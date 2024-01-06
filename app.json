@@ -43,7 +43,8 @@
         "tabletImage": "./assets/images/splash-logo-ios-tablet.png",
         "resizeMode": "contain",
         "backgroundColor": "#191015"
-      }
+      },
+      "buildNumber": "2"
     },
     "web": {
       "favicon": "./assets/images/app-icon-web-favicon.png",
