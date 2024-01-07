@@ -5,7 +5,7 @@
     "name": "MarqueeApp",
     "slug": "MarqueeApp",
     "scheme": "marqueeapp",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "orientation": "default",
     "icon": "./assets/images/app-icon-all.png",
     "splash": {
