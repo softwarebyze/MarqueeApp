@@ -2,7 +2,7 @@
 
 Deployed on [![Netlify Status](https://api.netlify.com/api/v1/badges/7a0634b0-a5eb-40a9-8995-619e36ca6f17/deploy-status)](https://app.netlify.com/sites/marqueeapp/deploys) to https://marqueeapp.netlify.app/
 
-Available on the App Store: https://apps.apple.com/us/app/marqueeapp/id6475242034
+Available on the [![](https://img.shields.io/badge/App%20Store-4285F4.svg?style=flat-square&logo=App-Store&labelColor=4285F4&logoColor=fff)](https://apps.apple.com/us/app/marqueeapp/id6475242034) at https://apps.apple.com/us/app/marqueeapp/id6475242034
 
 Enter text, rotate your screen, and see a few letters at a time scroll horizontally across the screen
 
