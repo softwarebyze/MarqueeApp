@@ -1,4 +1,6 @@
+# these are basically equivalent
 # https://docs.expo.dev/eas-update/github-actions/#publish-updates-on-push
+# https://github.com/marketplace/actions/expo-github-action
 name: update
 on: push
 
