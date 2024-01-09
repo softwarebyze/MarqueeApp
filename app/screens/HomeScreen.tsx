@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite"
 import React, { FC } from "react"
 import { Image, ImageStyle, Linking, TextStyle, View, ViewStyle } from "react-native"
-import { TextField, Button, Text, MarqueeText } from "app/components"
+import { TextField, Button, Text, MarqueeText, Screen } from "app/components"
 import { AppStackScreenProps } from "../navigators"
 import { colors, spacing } from "../theme"
 import { isRTL } from "../i18n"
@@ -22,7 +22,6 @@ const ReportBugs = () => (
 
 const $reportBugsLink: TextStyle = {
   color: colors.tint,
-  marginBottom: spacing.lg,
   alignSelf: isRTL ? "flex-start" : "flex-end",
 }
 
@@ -30,7 +29,7 @@ const welcomeLogo = require("../../assets/images/logo.png")
 
 interface HomeScreenProps extends AppStackScreenProps<"Home"> {}
 
-const texts = ["to the mooooooooonnn 🚀🚀🚀🚀", "wassup 👀"]
+const texts = ["to the mooooooooonnn 🚀🚀🚀🚀", "wassup 👋", "☮️ Peace to the world 🌎"]
 
 export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_props) {
   const { navigation, route } = _props
@@ -51,12 +50,14 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
   }
 
   return (
-    <View style={$container}>
-      <View style={$topContainer}>
+    <Screen
+      preset="scroll"
+      contentContainerStyle={$container}
+      safeAreaEdges={["top", "bottom", "left", "right"]}
+    >
         <Image style={$welcomeLogo} source={welcomeLogo} resizeMode="contain" />
         <Text style={$welcomeHeading} tx="homeScreen.createMarquee" preset="heading" />
         <TextField
-          multiline
           labelTx="marqueeScreen.label"
           placeholder="Type here"
           placeholderTextColor="#aaa"
@@ -64,45 +65,33 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
           onChangeText={setText}
           value={text}
         />
+        <Button style={$button} preset="reversed" text="Show Full Screen!" onPress={showMarquee} />
         <View style={$previewContainer}>
-          <Text style={$previewText} text="Preview" />
+          <Text preset="formLabel" style={$previewText} text="Preview" />
           <MarqueeText fullscreen={false} size={previewSize} {...marqueeProps} />
         </View>
-        <Button style={$button} preset="reversed" text="Show Full Screen!" onPress={showMarquee} />
         <ReportBugs />
-      </View>
-    </View>
+    </Screen>
   )
 })
 
 const $container: ViewStyle = {
-  flex: 1,
-  backgroundColor: colors.background,
-}
-
-const $topContainer: ViewStyle = {
-  flexShrink: 1,
-  flexGrow: 1,
-  flexBasis: "57%",
-  justifyContent: "center",
+  paddingVertical: spacing.lg,
   paddingHorizontal: spacing.lg,
 }
 
 const $previewContainer: ViewStyle = {
-  paddingHorizontal: spacing.lg,
-  marginVertical: spacing.xl,
+  marginVertical: spacing.lg,
 }
 
 const $previewText: TextStyle = {
-  fontSize: 20,
-  fontWeight: "bold",
   marginBottom: spacing.md,
 }
 
 const $welcomeLogo: ImageStyle = {
-  height: 88,
+  height: 60,
   width: "100%",
-  marginBottom: spacing.xxl,
+  marginBottom: spacing.lg,
 }
 
 const $welcomeHeading: TextStyle = {
