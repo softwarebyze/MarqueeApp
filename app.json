@@ -44,7 +44,7 @@
         "resizeMode": "contain",
         "backgroundColor": "#191015"
       },
-      "buildNumber": "2"
+      "buildNumber": "3"
     },
     "web": {
       "favicon": "./assets/images/app-icon-web-favicon.png",
