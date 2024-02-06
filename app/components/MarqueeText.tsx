@@ -38,7 +38,7 @@ export const MarqueeText = ({
 
   return (
     <Marquee style={fullscreen ? $fullScreen : {}} spacing={spacing} speed={speed}>
-      <Text style={$marqueeText} text={formattedText} onPress={onPress} />
+      <Text numberOfLines={1} style={$marqueeText} text={formattedText} onPress={onPress} />
     </Marquee>
   )
 }
