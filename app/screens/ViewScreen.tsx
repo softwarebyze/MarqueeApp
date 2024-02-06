@@ -13,5 +13,5 @@ export const ViewScreen: FC<ViewScreenProps> = observer(function HomeScreen(_pro
     },
   } = _props
   const goHome = () => (canGoBack() ? goBack() : navigate("Home", { text }))
-  return <MarqueeText text={text} fullscreen onPress={goHome} />
+  return <MarqueeText text={text} fullscreen speed={5} spacing={20} onPress={goHome} />
 })
