@@ -29,7 +29,7 @@ export const MarqueeText = ({
 
   const $marqueeText: TextStyle = {
     fontSize: marqueeTextSize,
-    height: marqueeTextSize - 0,
+    height: marqueeTextSize + 10,
     lineHeight: marqueeTextSize * 1.2,
     letterSpacing: -marqueeTextSize * 0.05,
   }
