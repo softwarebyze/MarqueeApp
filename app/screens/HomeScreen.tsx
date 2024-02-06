@@ -41,7 +41,7 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
   const previewSize = 40
   const marqueeProps = {
     text,
-    speed: 1,
+    speed: 2,
     spacing: 70,
   }
 
