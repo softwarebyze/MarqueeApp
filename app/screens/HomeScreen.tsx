@@ -52,7 +52,7 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
     <Screen
       preset="scroll"
       contentContainerStyle={$container}
-      safeAreaEdges={["top", "bottom", "left", "right"]}
+      safeAreaEdges={["top", "left", "right"]}
     >
         <Image style={$welcomeLogo} source={welcomeLogo} resizeMode="contain" />
         <Text style={$welcomeHeading} tx="homeScreen.createMarquee" preset="heading" />
