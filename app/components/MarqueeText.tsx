@@ -28,6 +28,7 @@ export const MarqueeText = ({
   const $marqueeText: TextStyle = {
     fontSize: marqueeTextSize,
     lineHeight: Platform.OS !== "web" ? undefined : marqueeTextSize * 1.2,
+    letterSpacing: -marqueeTextSize * 0.05,
   }
 
   const formattedText = text?.toUpperCase() ?? ""
