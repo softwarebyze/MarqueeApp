@@ -58,6 +58,7 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
         <Image style={$welcomeLogo} source={welcomeLogo} resizeMode="contain" />
         <Text style={$welcomeHeading} tx="homeScreen.createMarquee" preset="heading" />
         <TextField
+          multiline
           labelTx="marqueeScreen.label"
           placeholder="Type here"
           placeholderTextColor="#aaa"
