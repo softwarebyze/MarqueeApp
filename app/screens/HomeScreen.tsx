@@ -54,28 +54,28 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
       contentContainerStyle={$container}
       safeAreaEdges={["top", "left", "right"]}
     >
-        <Image style={$welcomeLogo} source={welcomeLogo} resizeMode="contain" />
-        <Text style={$welcomeHeading} tx="homeScreen.createMarquee" preset="heading" />
-        <TextField
-          multiline
-          labelTx="marqueeScreen.label"
-          placeholder="Type here"
-          placeholderTextColor="#aaa"
-          selectionColor="#fff"
-          onChangeText={setText}
-          value={text}
-        />
-        <Button
-          style={$button}
-          preset="reversed"
-          tx="homeScreen.showFullScreen"
-          onPress={showMarquee}
-        />
-        <View style={$previewContainer}>
-          <Text preset="formLabel" style={$previewText} tx="homeScreen.preview" />
-          <MarqueeText fullscreen={false} size={40} {...marqueeProps} />
-        </View>
-        <ReportBugs />
+      <Image style={$welcomeLogo} source={welcomeLogo} resizeMode="contain" />
+      <Text style={$welcomeHeading} tx="homeScreen.createMarquee" preset="heading" />
+      <TextField
+        multiline
+        labelTx="marqueeScreen.label"
+        placeholder="Type here"
+        placeholderTextColor="#aaa"
+        selectionColor="#fff"
+        onChangeText={setText}
+        value={text}
+      />
+      <Button
+        style={$button}
+        preset="reversed"
+        tx="homeScreen.showFullScreen"
+        onPress={showMarquee}
+      />
+      <View style={$previewContainer}>
+        <Text preset="formLabel" style={$previewText} tx="homeScreen.preview" />
+        <MarqueeText fullscreen={false} size={40} {...marqueeProps} />
+      </View>
+      <ReportBugs />
     </Screen>
   )
 })
