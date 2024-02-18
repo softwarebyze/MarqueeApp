@@ -38,7 +38,6 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
   const [text, setText] = React.useState(
     () => textFromRoute || texts[Math.floor(Math.random() * texts.length)],
   )
-  const previewSize = 40
   const marqueeProps = {
     text,
     speed: 2,
@@ -66,10 +65,15 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
           onChangeText={setText}
           value={text}
         />
-        <Button style={$button} preset="reversed" text="Show Full Screen!" onPress={showMarquee} />
+        <Button
+          style={$button}
+          preset="reversed"
+          tx="homeScreen.showFullScreen"
+          onPress={showMarquee}
+        />
         <View style={$previewContainer}>
-          <Text preset="formLabel" style={$previewText} text="Preview" />
-          <MarqueeText fullscreen={false} size={previewSize} {...marqueeProps} />
+          <Text preset="formLabel" style={$previewText} tx="homeScreen.preview" />
+          <MarqueeText fullscreen={false} size={40} {...marqueeProps} />
         </View>
         <ReportBugs />
     </Screen>
