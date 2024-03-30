@@ -31,8 +31,7 @@
         "image": "./assets/images/splash-logo-android-universal.png",
         "resizeMode": "contain",
         "backgroundColor": "#191015"
-      },
-      "versionCode": 2
+      }
     },
     "ios": {
       "icon": "./assets/images/app-icon-ios.png",
@@ -43,8 +42,7 @@
         "tabletImage": "./assets/images/splash-logo-ios-tablet.png",
         "resizeMode": "contain",
         "backgroundColor": "#191015"
-      },
-      "buildNumber": "4"
+      }
     },
     "web": {
       "favicon": "./assets/images/app-icon-web-favicon.png",
