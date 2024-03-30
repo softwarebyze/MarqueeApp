@@ -14,7 +14,8 @@
       "backgroundColor": "#191015"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/a95f3991-16ef-4f1c-88ab-82319447ad3e"
     },
     "jsEngine": "hermes",
     "assetBundlePatterns": [
@@ -65,7 +66,8 @@
             "newArchEnabled": false
           }
         }
-      ]
+      ],
+      "expo-font"
     ],
     "experiments": {
       "tsconfigPaths": true
