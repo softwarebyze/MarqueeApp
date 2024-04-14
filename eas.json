@@ -7,13 +7,11 @@
     "development": {
       "distribution": "internal",
       "android": {
-        "gradleCommand": ":app:assembleDebug",
-        "image": "default"
+        "gradleCommand": ":app:assembleDebug"
       },
       "ios": {
         "buildConfiguration": "Debug",
-        "simulator": true,
-        "image": "default"
+        "simulator": true
       },
       "channel": "development"
     },
