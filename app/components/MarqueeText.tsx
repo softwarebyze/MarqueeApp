@@ -1,6 +1,6 @@
 import React from "react"
 
-import { TextStyle, ViewStyle, useWindowDimensions } from "react-native"
+import { Platform, TextStyle, ViewStyle } from "react-native"
 
 import { Marquee } from "@animatereactnative/marquee"
 import { colors } from "app/theme"
@@ -23,14 +23,11 @@ export const MarqueeText = ({
   fullscreen,
   size,
 }: MarqueeTextProps) => {
-  const { height: screenHeight } = useWindowDimensions()
-
-  const marqueeTextSize = size || screenHeight / 2
+  const marqueeTextSize = size || 80
 
   const $marqueeText: TextStyle = {
     fontSize: marqueeTextSize,
-    height: marqueeTextSize * 1.1,
-    lineHeight: marqueeTextSize * 1.2,
+    lineHeight: Platform.OS !== "web" ? undefined : marqueeTextSize * 1.2,
     letterSpacing: -marqueeTextSize * 0.05,
   }
 
@@ -42,10 +39,6 @@ export const MarqueeText = ({
     </Marquee>
   )
 }
-
-// const $base = {
-//     backgroundColor: colors.background,
-// }
 
 const $fullScreen: ViewStyle = {
   position: "absolute",

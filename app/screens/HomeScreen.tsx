@@ -38,7 +38,6 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
   const [text, setText] = React.useState(
     () => textFromRoute || texts[Math.floor(Math.random() * texts.length)],
   )
-  const previewSize = 40
   const marqueeProps = {
     text,
     speed: 2,
@@ -53,24 +52,30 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
     <Screen
       preset="scroll"
       contentContainerStyle={$container}
-      safeAreaEdges={["top", "bottom", "left", "right"]}
+      safeAreaEdges={["top", "left", "right"]}
     >
-        <Image style={$welcomeLogo} source={welcomeLogo} resizeMode="contain" />
-        <Text style={$welcomeHeading} tx="homeScreen.createMarquee" preset="heading" />
-        <TextField
-          labelTx="marqueeScreen.label"
-          placeholder="Type here"
-          placeholderTextColor="#aaa"
-          selectionColor="#fff"
-          onChangeText={setText}
-          value={text}
-        />
-        <Button style={$button} preset="reversed" text="Show Full Screen!" onPress={showMarquee} />
-        <View style={$previewContainer}>
-          <Text preset="formLabel" style={$previewText} text="Preview" />
-          <MarqueeText fullscreen={false} size={previewSize} {...marqueeProps} />
-        </View>
-        <ReportBugs />
+      <Image style={$welcomeLogo} source={welcomeLogo} resizeMode="contain" />
+      <Text style={$welcomeHeading} tx="homeScreen.createMarquee" preset="heading" />
+      <TextField
+        multiline
+        labelTx="marqueeScreen.label"
+        placeholder="Type here"
+        placeholderTextColor="#aaa"
+        selectionColor="#fff"
+        onChangeText={setText}
+        value={text}
+      />
+      <Button
+        style={$button}
+        preset="reversed"
+        tx="homeScreen.showFullScreen"
+        onPress={showMarquee}
+      />
+      <View style={$previewContainer}>
+        <Text preset="formLabel" style={$previewText} tx="homeScreen.preview" />
+        <MarqueeText fullscreen={false} size={40} {...marqueeProps} />
+      </View>
+      <ReportBugs />
     </Screen>
   )
 })
