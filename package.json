@@ -40,6 +40,8 @@
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.0.2",
     "@shopify/flash-list": "1.6.4",
+    "@testing-library/jest-native": "^5.4.3",
+    "@testing-library/react-native": "^12.6.1",
     "apisauce": "3.0.1",
     "date-fns": "^2.30.0",
     "expo": "^51.0.32",

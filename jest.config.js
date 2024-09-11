@@ -11,9 +11,13 @@ module.exports = {
   testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/.maestro/", "@react-native"],
   testEnvironment: "jsdom",
   setupFiles: ["<rootDir>/test/setup.ts"],
-  transform:{
-    '^.+\\.test.tsx?$': ['ts-jest', {
-      tsconfig: '<rootDir>/test/test-tsconfig.json'
-    }]
-  }
+  setupFilesAfterEnv: ["./jest-setup-after-env.js"],
+  transform: {
+    "^.+\\.test.tsx?$": [
+      "ts-jest",
+      {
+        tsconfig: "<rootDir>/test/test-tsconfig.json",
+      },
+    ],
+  },
 }

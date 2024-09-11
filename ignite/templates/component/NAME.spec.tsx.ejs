@@ -1,0 +1,15 @@
+---
+destinationDir: app/components/specs
+---
+// https://reactnativetesting.io/component/testing/
+
+import React from "react"
+import { fireEvent, render, screen } from "@testing-library/react-native"
+import { <%= props.pascalCaseName %> } from "../<%= props.pascalCaseName %>"
+
+describe("<%= props.pascalCaseName %>", () => {
+  it("renders", () => {
+    render(<<%= props.pascalCaseName %> />)
+    expect(screen.getByText("Hello")).toBeTruthy()
+  })
+})
