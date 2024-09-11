@@ -6,8 +6,7 @@ const en = {
     logOut: "Log Out",
   },
   homeScreen: {
-    postscript:
-      "Enjoy your marquee :)",
+    postscript: "Enjoy your marquee :)",
     createMarquee: "Create your own marquee!",
     exciting: "(ohh, this is exciting!)",
     letsGo: "Let's go!",
