@@ -17,13 +17,12 @@ jobs:
           fi
 
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: 18.x
-          cache: npm
+          bun-version: latest
 
       - name: Setup EAS
         uses: expo/expo-github-action@v8
@@ -32,7 +31,7 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
 
       - name: Install dependencies
-        run: npm install
+        run: bun install
 
       - name: Publish update
         run: eas update --auto
