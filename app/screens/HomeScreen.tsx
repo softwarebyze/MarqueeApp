@@ -73,7 +73,7 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
       />
       <View style={$previewContainer}>
         <Text preset="formLabel" style={$previewText} tx="homeScreen.preview" />
-        <MarqueeText fullscreen={false} size={40} {...marqueeProps} />
+        <MarqueeText onPress={showMarquee} fullscreen={false} size={40} {...marqueeProps} />
       </View>
       <ReportBugs />
     </Screen>
