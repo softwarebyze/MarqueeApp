@@ -46,7 +46,6 @@ const $fullScreen: ViewStyle = {
   bottom: 0,
   left: 0,
   right: 0,
-  alignItems: "flex-start",
   justifyContent: "center",
   backgroundColor: colors.background,
 }
