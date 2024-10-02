@@ -9,7 +9,8 @@ const en = {
     postscript: "Enjoy your marquee :)",
     createMarquee: "Create your own marquee!",
     exciting: "(ohh, this is exciting!)",
-    letsGo: "Let's go!",
+    showFullScreen: "Show Full Screen!",
+    preview: "Preview",
   },
   errorScreen: {
     title: "Something went wrong!",
