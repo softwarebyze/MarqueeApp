@@ -1,0 +1,27 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "75M38Z9JBF.com.marqueeapp"
+        ],
+        "components": [
+          {
+            "/": "*",
+            "comment": "Matches all routes"
+          }
+        ]
+      }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": [
+      "75M38Z9JBF.com.marqueeapp"
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "75M38Z9JBF.com.marqueeapp"
+    ]
+  }
+}
