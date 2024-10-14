@@ -31,15 +31,14 @@ import Config from "./config"
 import { GestureHandlerRootView } from "react-native-gesture-handler"
 import { ViewStyle } from "react-native"
 import { LinkingOptions } from "@react-navigation/native"
+import { decode, encode } from "./utils/deepLinkHelpers"
 
 export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 
 // Web linking configuration
 const prefix = Linking.createURL("/")
 const viewLink = Linking.createURL("/view/:text", { queryParams: { text: "" } })
-
-const decode = (encodedText: string) => decodeURIComponent(encodedText)
-const encode = (text: string) => encodeURIComponent(text)
+const webUrl = "https://marqueeapp.netlify.app"
 
 // passing params: https://reactnavigation.org/docs/configuring-links/#passing-params
 // parse is to encode
@@ -108,7 +107,7 @@ function App(props: AppProps) {
   if (!rehydrated || !isNavigationStateRestored || !areFontsLoaded) return null
 
   const linking: LinkingOptions<object> | undefined = {
-    prefixes: [prefix, viewLink],
+    prefixes: [prefix, viewLink, webUrl],
     config,
   }
 
