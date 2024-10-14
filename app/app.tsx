@@ -31,15 +31,13 @@ import Config from "./config"
 import { GestureHandlerRootView } from "react-native-gesture-handler"
 import { ViewStyle } from "react-native"
 import { LinkingOptions } from "@react-navigation/native"
+import { decode, encode } from "./utils/deepLinkHelpers"
 
 export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 
 // Web linking configuration
 const prefix = Linking.createURL("/")
 const viewLink = Linking.createURL("/view/:text", { queryParams: { text: "" } })
-
-const decode = (encodedText: string) => decodeURIComponent(encodedText)
-const encode = (text: string) => encodeURIComponent(text)
 
 // passing params: https://reactnavigation.org/docs/configuring-links/#passing-params
 // parse is to encode

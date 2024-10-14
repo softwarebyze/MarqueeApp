@@ -1,10 +1,11 @@
+import { Button, Icon, MarqueeText, Screen, Text, TextField } from "app/components"
 import { observer } from "mobx-react-lite"
 import React, { FC } from "react"
 import { Image, ImageStyle, Linking, TextStyle, View, ViewStyle } from "react-native"
-import { TextField, Button, Text, MarqueeText, Screen } from "app/components"
+import { isRTL } from "../i18n"
 import { AppStackScreenProps } from "../navigators"
 import { colors, spacing } from "../theme"
-import { isRTL } from "../i18n"
+import { shareMarquee } from "../utils/shareMarquee"
 
 const issuesUrl = "https://github.com/softwarebyze/MarqueeApp/issues"
 
@@ -65,12 +66,21 @@ export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen(_pro
         onChangeText={setText}
         value={text}
       />
-      <Button
-        style={$button}
-        preset="reversed"
-        tx="homeScreen.showFullScreen"
-        onPress={showMarquee}
-      />
+      <View style={$buttonContainer}>
+        <Button
+          style={$button}
+          preset="reversed"
+          tx="homeScreen.showFullScreen"
+          onPress={showMarquee}
+        />
+        <Button
+          style={$button}
+          preset="default"
+          text="Share"
+          onPress={() => shareMarquee(text)}
+          RightAccessory={() => <Icon icon="share" style={{ marginHorizontal: spacing.xxxs }} />}
+        />
+      </View>
       <View style={$previewContainer}>
         <Text preset="formLabel" style={$previewText} tx="homeScreen.preview" />
         <MarqueeText onPress={showMarquee} fullscreen={false} size={40} {...marqueeProps} />
@@ -103,7 +113,13 @@ const $welcomeHeading: TextStyle = {
   marginBottom: spacing.md,
 }
 
-const $button: ViewStyle = {
+const $buttonContainer: ViewStyle = {
+  justifyContent: "space-between",
   marginTop: spacing.md,
   marginBottom: spacing.md,
+  gap: spacing.md,
+}
+
+const $button: ViewStyle = {
+  flex: 1,
 }
