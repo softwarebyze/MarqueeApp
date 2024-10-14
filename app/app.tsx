@@ -38,6 +38,7 @@ export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 // Web linking configuration
 const prefix = Linking.createURL("/")
 const viewLink = Linking.createURL("/view/:text", { queryParams: { text: "" } })
+const webUrl = "https://marqueeapp.netlify.app"
 
 // passing params: https://reactnavigation.org/docs/configuring-links/#passing-params
 // parse is to encode
@@ -106,7 +107,7 @@ function App(props: AppProps) {
   if (!rehydrated || !isNavigationStateRestored || !areFontsLoaded) return null
 
   const linking: LinkingOptions<object> | undefined = {
-    prefixes: [prefix, viewLink],
+    prefixes: [prefix, viewLink, webUrl],
     config,
   }
 
